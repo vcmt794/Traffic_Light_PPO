@@ -14,8 +14,11 @@ import torch.nn.functional as F
 import torch.nn as nn
 import matplotlib.pyplot as plt
 
-os.environ["SUMO_HOME"] = '/Users/vutri/miniconda/envs/MODELAI/bin/sumo'
-sys.path.append(os.path.join(os.environ['SUMO_HOME'], 'tools'))
+if "SUMO_HOME" in os.environ:
+    tools = os.path.join(os.environ["SUMO_HOME"], "tools")
+    sys.path.append(tools)
+else:
+    sys.exit("please declare environment variable 'SUMO_HOME'")
 
 from sumolib import checkBinary  # noqa
 import traci  # noqa
