@@ -1,0 +1,15 @@
+TRAFFIC LIGHT
+1. CREATE NET FILE:
+- Go to Openstreetmap
+- Choose zone
+- Export
+--> Get .osm file
+GO TO TERMINAL OR ANYWHERE ELSE YOU WANT: netconvert --osm-files your_osm_file.osm -o your_new_net.net.xml
+2. CREATE ROUTE FILE
+Manual: Check yourself
+Random/Auto: (if u have SUMO from git) -> move to tools dir:
+python3 randomTrips.py -n ur_net_file.net.xml -r ur_route_file.rou.xml --end NUMBEROFVEHICLE(?)
+-------------------------------------------------------
+VISUALIZE AND RUN CODE:
+1. open -a XQuartz
+2. netedit ur_net_file/
